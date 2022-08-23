@@ -1,0 +1,44 @@
+.rounded {
+    border-radius: 10px
+}
+
+.m-1 {
+    margin: 10px;
+}
+
+.mt {
+    margin-top: 2px;
+}
+
+.mt-10 {
+    margin-top: 16px;
+}
+
+.pt-10 {
+    padding-top: 16px;
+}
+
+.shadow {
+box-shadow: 3px 6px 10px 0px rgb(0 0 0 / 50%);
+
+}
+
+.bg-vintage {
+    background-color:rgba(254,248,239,1)
+}
+
+.transition {
+    opacity: 0;
+}
+
+.cursor-point {
+    cursor: pointer;
+}
+
+.scale-enter-start{
+    transform: scale(1.2);
+}
+
+.scale-leave-end {
+    transform: scale(0.5);
+}

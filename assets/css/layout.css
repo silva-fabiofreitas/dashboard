@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,100;1,300;1,900&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    background-color: whitesmoke;
+    font-family: 'Poppins', sans-serif;
+    overflow: scroll;
+
+}
+
+.container {
+    padding: 16px;
+    display: grid;
+    min-height: calc(100vh - 32px);
+    grid-template-columns: 8.33% 1fr 1fr;
+    grid-template-rows: 250px 1fr 1fr 40px;
+    grid-template-areas:
+        'aside top top'
+        'aside chart1 chart2'
+        'aside chart3 chart4'
+        'footer footer footer';
+    gap: 16px;
+}
+
+.container-2 {
+    padding: 16px;
+    display: grid;
+    min-height: calc(100vh - 32px);
+    grid-template-columns: 8.33% 1fr 1fr;
+    grid-template-rows: 250px 1fr 1fr 40px;
+    grid-template-areas:
+        'aside top top'
+        'aside top top'
+        'aside top top'
+        'footer footer footer';
+    gap: 16px;
+}
+
+.top-charts {
+    grid-area: top
+}
+
+.center-chart-1 {
+    grid-area: chart1
+}
+
+.center-chart-2 {
+    grid-area: chart2
+}
+
+.center-chart-3 {
+    grid-area: chart3
+}
+
+.center-chart-4 {
+    grid-area: chart4
+}
+
+.aside {
+    grid-area: aside
+}
+
+.footer {
+    grid-area: footer
+}
+
+
+section {
+    /* margin: 16px; */
+    transition: transform 1s , opacity 1s;
+}
+
+nav ul {
+    margin: 0;
+    padding-left:20px
+
+}
+
+nav ul li {
+    list-style:none;
+    padding-top: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    
+}
+
+nav i {
+    padding: 5px 10px;
+        
+}

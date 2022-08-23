@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <script defer src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script defer src="https://kit.fontawesome.com/69497f0ba8.js" crossorigin="anonymous"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.3.3/echarts.min.js"
         integrity="sha512-2L0h0GhoIHQEjti/1KwfjcbyaTHy+hPPhE1o5wTCmviYcPO/TD9oZvUxFQtWvBkCSTIpt+fjsx1CCx6ekb51gw=="
@@ -17,17 +18,20 @@
     <script defer src="assets/themes/vintage.js"></script>
     <script defer src="dashboard.js"></script>
 
+
 </head>
 
 <body>
 
-    <section id="dashboar1" class="container pt-10">
+    
+
+    <section x-data="{open: true}" id="dashboar1" class="container">
         <div class="aside rounded shadow bg-vintage">
+            <h4> 
+                <i @click="open =! open" class="fas fa-bars cursor-point"></i>Menu
+            </h4>
             <nav class="m-1">
-                <h4> 
-                    <i class="fas fa-bars"></i>
-                  Menu</h4>
-                <ul>
+                <ul >
                     <li>
                         <i class="fas fa-tachometer-alt"></i>
                         <a href="#dashboar1">Dashboard</a>
@@ -62,7 +66,7 @@
         <div class="footer rounded shadow bg-vintage">pag</div>
     </section>
 
-    <section id="dashboar2" class="container-2 pt-10">
+    <section id="dashboar2" class="container-2">
         <div class="aside rounded shadow bg-vintage">
             <nav class="m-1">
                 <h4> 
@@ -87,19 +91,7 @@
         <div class="top-charts rounded shadow bg-vintage">
             <div id="network" style="height:100%; width:100%"></div>
         </div>
-        <div class="center-chart-1 rounded shadow bg-vintage">
-            <div id="chart1" style="height:100%; width:100%"></div>
-        </div>
-        <div class="center-chart-2 rounded shadow bg-vintage">
-            <div id="chart2" style="height:100%; width:100%"></div>
-        </div>
-        <div class="center-chart-3 rounded shadow bg-vintage">
-            <div id="chart3" style="height:100%; width:100%"></div>
-        </div>
-        <div class="center-chart-4 rounded shadow bg-vintage">
-            <div id="chart4" style="height:100%; width:100%"></div>
-        </div>
-
+       
         <div class="footer rounded shadow bg-vintage">pag</div>
     </section>
 </body>

@@ -360,15 +360,17 @@ function trasintionAddClick(elements) {
       const baseHash = window.location.hash
       const targetHash = value.getAttribute('href')      
       const targetSection = document.querySelector(targetHash)
-      const baseSection = document.querySelector(baseHash)
-
-      if (baseHash !== targetHash || baseHash !== '') {
+      
+      if (baseHash !== targetHash && baseHash !== '') {
+        const baseSection = document.querySelector(baseHash)
         /* Add trasition opacity to current section when changing
            section and remove transition target section    
         */
-        baseSection.classList.toggle('transition')
-        targetSection.classList.remove('transition')
+       baseSection.classList.toggle('transition')
+       targetSection.classList.remove('transition')
+      
       }
+      
     })
   }
   )

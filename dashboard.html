@@ -11,17 +11,19 @@
     <!-- <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script> -->
 
     <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script defer src="https://kit.fontawesome.com/69497f0ba8.js" crossorigin="anonymous"></script>
+    <script defer src="assets/js/events.js"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
+    
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.3.3/echarts.min.js"
-        integrity="sha512-2L0h0GhoIHQEjti/1KwfjcbyaTHy+hPPhE1o5wTCmviYcPO/TD9oZvUxFQtWvBkCSTIpt+fjsx1CCx6ekb51gw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    integrity="sha512-2L0h0GhoIHQEjti/1KwfjcbyaTHy+hPPhE1o5wTCmviYcPO/TD9oZvUxFQtWvBkCSTIpt+fjsx1CCx6ekb51gw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script defer src="assets/themes/vintage.js"></script>
     <script defer src="dashboard.js"></script>
 
 </head>
+
 <body>
     <section x-data="{open: true, sidebar: true}" id="dashboar1" class="grid grid-1" :class="open || 'grid--full'">
 
@@ -29,7 +31,7 @@
             <nav>
                 <ul>
                     <span class="d-flex justify-content-start align-items-center mb-1">
-                        <i @click="open =! open" class="fas fa-bars cursor-point"></i>
+                        <i @click="open = !open" class="fas fa-bars cursor-point"></i>
                         <h4 x-show="open" x-transition class="m-0">Menu</h4>
                     </span>
                     <li>
@@ -46,6 +48,34 @@
                     </li>
                 </ul>
             </nav>
+
+            <div  x-data="App" class="menu-filter m-1">
+                <span class="d-flex justify-content-start align-items-center gap-1">
+                    <i @click="open =! open" class="fa fa-filter cursor-point"></i>
+                    <h4 class="">Filtro</h4>
+                    <i @click="clearChecked"
+                       x-show="openClose"
+                     
+                     class="fa fa-times-circle fa-sm  cursor-point"></i>
+                </span>
+                <form x-show="open" x-transition>
+                    <div class="filter d-flex f-direction-col" x-ref="filter">
+                        <label for="opt1">
+                            <input name="equip" id="opt1" type="checkbox" value="opt1">Option 1
+                        </label>
+    
+                        <label for="opt2">
+                            <input name="equip" id="opt2" type="checkbox" value="opt2">Option 2
+                        </label>
+    
+                        <label for="opt3">
+                            <input name="equip" id="opt3" type="checkbox" value="opt3">Option 3
+                        </label>    
+                    </div>
+                    <button @click="isChecked" type="button" id="btnFilter">Filtrar</button>
+                </form>
+
+            </div>
         </div>
 
         <!-- Charts -->
@@ -68,8 +98,7 @@
 
     </section>
 
-    <section x-data="{open: true, sidebar: true}"
-     id="dashboar2" class="grid grid-2" :class="open || 'grid--full'">
+    <section x-data="{open: true, sidebar: true}" id="dashboar2" class="grid grid-2" :class="open || 'grid--full'">
         <div class="aside rounded shadow bg-vintage">
             <nav>
                 <ul>
@@ -103,5 +132,6 @@
     </div>
 
 </body>
+
 
 </html>
